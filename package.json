@@ -1,0 +1,21 @@
+{
+  "name": "remote-mail",
+  "version": "1.0.0",
+  "description": "A system that allows authenticated users to send emails from an account without knowing it's password.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohammed Ajmal Siddiqui <ajmalsiddiqui21@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.10",
+    "nodemailer": "^4.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  }
+}
