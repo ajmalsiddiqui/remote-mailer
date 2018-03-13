@@ -8,6 +8,10 @@
     "start": "node index.js",
     "start:dev": "nodemon index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajmalsiddiqui/remote-mailer"
+  },
   "author": "Mohammed Ajmal Siddiqui <ajmalsiddiqui21@gmail.com>",
   "license": "ISC",
   "dependencies": {
