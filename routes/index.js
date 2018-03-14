@@ -1,5 +1,7 @@
 const employeeRoutes = require('./employeeRoutes');
+const clientRoutes = require('./clientRoutes');
 
 module.exports = {
-	'employeeRoutes': employeeRoutes
+	'employeeRoutes': employeeRoutes,
+	'clientRoutes': clientRoutes
 };

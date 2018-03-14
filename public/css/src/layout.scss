@@ -1,0 +1,39 @@
+$body-background: #000000;
+
+%flex-row-center {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+%flex-col-center {
+	@extend %flex-row-center;
+	flex-direction: column;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body, .root {
+	height: 100%;
+	width: 100%;
+}
+
+.root {
+	@extend %flex-row-center;
+}
+
+.container {
+	@extend %flex-col-center;
+}
+
+.login-div {
+	@extend %flex-row-center;
+	height: 50%;
+}
+
+.mail-div {
+	@extend %flex-row-center;
+}

@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass ./public/css/src/*.scss ./public/css/dist/styles.css",
+    "watch:css": "onchange './public/css/src/*.scss' -- npm run scss",
     "start": "node index.js",
-    "start:dev": "nodemon index.js"
+    "start:dev": "parallelshell 'nodemon index.js' 'npm run watch:css' 'webpack --watch'",
+    "build:client": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,16 +18,26 @@
   "author": "Mohammed Ajmal Siddiqui <ajmalsiddiqui21@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt": "^1.0.3",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
     "jsonwebtoken": "^8.2.0",
     "mongoose": "^5.0.10",
     "nodemailer": "^4.6.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
   }
 }
