@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-const loginUrl = '/api/employee/login';
+const loginUrl = '/api/login';
 
 export const login = event => {
+	console.log('login');
 	event.preventDefault();
 	const data = {
 		"empId": event.target[0].value,
@@ -14,6 +15,8 @@ export const login = event => {
 			if(parseInt(response.data.status) === 200) {
 				// TODO: redirect to mail page
 				console.log('Logged in');
+				window.localStorage.setItem('token', response.data.token);
+				window.location = '/client/mail?token=' + response.data.token;
 			}
 			else {
 				console.log('not authenticated');

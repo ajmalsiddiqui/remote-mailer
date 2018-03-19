@@ -35,7 +35,7 @@ if(config.enableCors) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/api/employee', employeeRoutes);
+app.use('/api', employeeRoutes);
 app.use('/client', clientRoutes);
 
 util.db(() => {

@@ -3,7 +3,7 @@ $body-background: #000000;
 %flex-row-center {
 	display: flex;
 	justify-content: center;
-	align-content: center;
+	align-items: center;
 }
 
 %flex-col-center {
@@ -21,8 +21,9 @@ html, body, .root {
 	width: 100%;
 }
 
-.root {
+.root, .login-div, .mail-div {
 	@extend %flex-row-center;
+	width: 100%;
 }
 
 .container {
@@ -30,10 +31,11 @@ html, body, .root {
 }
 
 .login-div {
-	@extend %flex-row-center;
 	height: 50%;
 }
 
-.mail-div {
-	@extend %flex-row-center;
+#mail-form {
+	@extend %flex-col-center;
+	width: 100%;
+	margin-bottom: 20px;
 }

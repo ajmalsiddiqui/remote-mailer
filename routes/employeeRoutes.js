@@ -31,8 +31,8 @@ router.post('/login', (req, res) => {
 
 // GET req for mailing
 // TODO: use authenticate middleware
-// router.get('/mail', authenticate, (req, res) => {
-router.get('/mail', (req, res) => {
+router.get('/mail', authenticate, (req, res) => {
+// router.get('/mail', (req, res) => {
 	employeeController.sendMails(req, res)
 		.then(info => {
 			res.status(info.status).json(info);
