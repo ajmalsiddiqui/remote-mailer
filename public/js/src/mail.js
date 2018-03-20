@@ -22,14 +22,15 @@ export const mail = event => {
 		if(parseInt(response.data.status) === 200) {
 			// TODO: redirect to mail page
 			console.log('Sent');
-			window.location = '/client/mail?token=' + token;
+			window.location = '/client/mail?token=' + token + '&message=' + response.data.message;
 		}
 		else {
 			console.log('not authenticated');
-			window.location = '/client/'
+			window.location = '/client?message=' + response.data.message;
 		}
 	})
 	.catch(err => {
 		console.log(err);
+		window.location = '/client/mail?message=something+went+wrong+did+you+enter+the+emails+correctly%3F&token=' + token;
 	});
 };

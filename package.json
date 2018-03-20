@@ -4,7 +4,7 @@
   "description": "A system that allows authenticated users to send emails from an account without knowing it's password.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --timeout 10000",
     "scss": "node-sass ./public/css/src/*.scss ./public/css/dist/styles.css",
     "watch:css": "onchange './public/css/src/*.scss' -- npm run scss",
     "start": "node index.js",
@@ -33,6 +33,9 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^5.0.4",
     "node-sass": "^4.7.2",
     "nodemon": "^1.17.1",
     "onchange": "^3.3.0",

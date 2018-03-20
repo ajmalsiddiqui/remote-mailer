@@ -45,3 +45,6 @@ util.db(() => {
 app.listen(config.port, () => {
 	console.log('Server running at port', config.port);
 });
+
+// For testings
+module.exports = app;

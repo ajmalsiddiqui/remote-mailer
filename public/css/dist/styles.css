@@ -23,3 +23,8 @@ html, body, .root {
 #mail-form {
   width: 100%;
   margin-bottom: 20px; }
+
+.message {
+  color: red;
+  font-size: 1.5em;
+  margin: 10px; }

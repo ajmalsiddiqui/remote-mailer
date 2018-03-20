@@ -19,10 +19,12 @@ export const login = event => {
 				window.location = '/client/mail?token=' + response.data.token;
 			}
 			else {
+				window.location = '/client?message=Login+failed+check+username+password';
 				console.log('not authenticated');
 			}
 		})
 		.catch(err => {
+			window.location = '/client?message=Login+failed+check+username+and+password';
 			console.log(err);
 		});
 };
