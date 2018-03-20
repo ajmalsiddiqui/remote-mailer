@@ -4,6 +4,7 @@ const Promise = require('bluebird');
 const config = require('../config');
 
 mongoose.connection.on('connected', () => {
+	console.log(config.mongo.uri);
 	console.log('Mongoose default connection open to ', config.mongo.uri);
 });
 
