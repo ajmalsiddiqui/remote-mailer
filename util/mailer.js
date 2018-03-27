@@ -21,6 +21,6 @@ module.exports = (toEmail, subject, text) => {
     mailOptions.to = toEmail;
     if(subject) mailOptions.subject = subject;
     if(text) mailOptions.text = text;
-		transport.sendMail(mailOptions, (err, info) => err ? reject(err) : resolve(info));
+		transport.sendMail(mailOptions, (err, info) => err || info.rejected.length === 0 ? reject(err || 'Failed to send email. Check the email address') : resolve(info));
 	});
 };

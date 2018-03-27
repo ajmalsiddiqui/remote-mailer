@@ -127,7 +127,7 @@ exports.login = (req, res) => {
 				})
 				.catch(err => {
 					// -- TODO: handle error
-					console.log(err);
+					// console.log(err);
 					const error = {
 						status: 403,
 						message: 'Error in password hashing',
@@ -153,10 +153,11 @@ exports.sendMails = (req, res) => {
 		}
 		
 		const mailers = req.query.emails.toString().replace(' ', '').split(',').map(email => mailer(email, req.query.subject, req.query.text));
-		console.log(mailers);
+		// console.log(mailers);
 
 		Promise.all(mailers)
 			.then(mails => {
+				console.log(mails)
 				const success = {
 					status: 200,
 					message: 'Successfully mailed employees',
